@@ -1,0 +1,20 @@
+{
+  "name": "EmployeesList",
+  "version": "0.0.0",
+  "authors": [
+    "Jakša Bašić <jaksabasic1@gmail.com>"
+  ],
+  "description": "List of Employees",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.14",
+    "angular-ui-router": "~0.2.13"
+  }
+}
