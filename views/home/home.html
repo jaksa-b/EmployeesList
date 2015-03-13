@@ -3,15 +3,39 @@
     <!-- Sidebar -->
     <aside class="col-sm-3">
       <h2>Employees List App</h2>
-      <ul class="nav">
-        <li><a href="">Department</a></li>
-        <li><a href="">Department</a></li>
-        <li><a href="">Department</a></li>
+      <ul class="nav" ng-repeat="department in departments">
+        <li><a href="">{{department.name}}</a></li>
       </ul>
     </aside>
     <!-- Main -->
     <main class="col-sm-9">
-      main
+      <div class="panel panel-default">
+        <div class="panel-heading">Employees List</div>
+        <div class="panel-body">
+          <input class="form-control" placeholder="Search Employees" type="text"/>
+        </div>
+        <!-- List Employees -->
+        <table class="table">
+          <thead>
+          <tr>
+            <th>id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>City</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="employee in employees">
+            <td>{{employee.id}}</td>
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.city}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
   </div>
 </div>
