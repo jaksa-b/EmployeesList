@@ -1,4 +1,4 @@
-angular.module('EmpListApp')
+angular.module('empListApp')
 .controller('HomeCtrl', function ($scope) {
 
     // Hardcoded Array of Departments & Employees
@@ -21,4 +21,16 @@ angular.module('EmpListApp')
       {"id": 6, "firstName": "Edward", "lastName": "Norton", "email": "edward.norton@comp.com", "city": "Osijek", "department": "Design"}
     ];
 
+    $scope.currentDepartment = null;
+
+    function setCurrentDepartment(department){
+      $scope.currentDepartment = department;
+    }
+    function isCurrentDepartment(department){
+      return $scope.currentDepartment !== null && department.name === $scope.currentDepartment.name;
+    }
+
+    // Make functions available to the View
+    $scope.setCurrentDepartment = setCurrentDepartment;
+    $scope.isCurrentDepartment = isCurrentDepartment;
   });

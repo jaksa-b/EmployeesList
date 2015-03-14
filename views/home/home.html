@@ -2,9 +2,9 @@
   <div class="row">
     <!-- Sidebar -->
     <aside class="col-sm-3">
-      <h2>Employees List App</h2>
-      <ul class="nav" ng-repeat="department in departments">
-        <li><a href="">{{department.name}}</a></li>
+      <a href="" ng-click="setCurrentDepartment(null)"><h2>Employees List App</h2></a>
+      <ul class="nav" ng-repeat="department in departments" ng-class="{'active': isCurrentDepartment(department)}">
+        <li><a href="" ng-click="setCurrentDepartment(department)">{{department.name}}</a></li>
       </ul>
     </aside>
     <!-- Main -->
@@ -13,6 +13,7 @@
         <div class="panel-heading">Employees List</div>
         <div class="panel-body">
           <input class="form-control" placeholder="Search Employees" type="text"/>
+          <small class="pull-right">Total number of employees {{employeesNumber.length}}</small>
         </div>
         <!-- List Employees -->
         <table class="table">
@@ -26,7 +27,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr ng-repeat="employee in employees">
+          <tr ng-repeat="employee in employeesNumber = (employees | filter:{department:currentDepartment.name})">
             <td>{{employee.id}}</td>
             <td>{{employee.firstName}}</td>
             <td>{{employee.lastName}}</td>

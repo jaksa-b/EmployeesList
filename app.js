@@ -1,4 +1,4 @@
-angular.module('EmpListApp',[
+angular.module('empListApp',[
   'ui.router'
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
